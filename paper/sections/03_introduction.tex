@@ -1,0 +1,6 @@
+\section{Software purpose}
+Phishing classifiers intended for local deployment need runtime measurements in addition to predictive accuracy. PhishVN Edge extracts the export and CPU benchmarking tools from the wider PhishVN project~\cite{phishvn_p1} into a standalone repository. It supports experiments on Linux edge boards, including NVIDIA Jetson devices, while also allowing a workstation demonstration.
+
+The release accepts a trusted scikit-learn estimator, exports it to ONNX, and measures inference latency and throughput. A small classifier trained on synthetic numeric data makes the workflow executable without access to the research models or private URL records. This demonstration validates the software path; it does not provide a trained Vietnamese phishing detector.
+
+Local filtering is a potential application. SMS forwarding, a scoring API, and gateway integration would require additional software and end-to-end evaluation. The measurements here concern model inference on numeric inputs, excluding parsing, feature extraction, and network overhead.

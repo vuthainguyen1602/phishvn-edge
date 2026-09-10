@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite this software when using the edge workflow."
+title: "PhishVN Edge"
+type: software
+version: 0.1.0
+authors:
+  - family-names: "Vu"
+    given-names: "Thai Nguyen"
+repository-code: "https://github.com/vuthainguyen1602/phishvn-edge"
+license: MIT

@@ -1,0 +1,4 @@
+model,runtime,precision,median_ms,throughput_inf_s,marginal_energy_mj
+URL HistGB,ONNX Runtime CPU,FP32,0.046,21180,0.13
+HistGB,ONNX Runtime CPU,FP32,0.040,24121,0.11
+HistGB,TensorRT GPU,FP16,0.068,12623,0.09

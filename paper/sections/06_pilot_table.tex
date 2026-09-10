@@ -1,0 +1,14 @@
+\begin{table*}[t]
+\caption{Historical pilot on NVIDIA Jetson Orin Nano. Board telemetry was sampled at 500 ms. These aggregate rows are not remeasured by the asset renderer.}
+\label{tab:pilot}
+\centering\small
+\begin{tabular}{@{}lllrrr@{}}
+\toprule
+Model & Runtime & Precision & Median (ms) & Throughput (inf./s) & Marginal energy (mJ) \\
+\midrule
+URL HistGB & ONNX Runtime CPU & FP32 & 0.046 & 21,180 & 0.13 \\
+HistGB & ONNX Runtime CPU & FP32 & 0.040 & 24,121 & 0.11 \\
+HistGB & TensorRT GPU & FP16 & 0.068 & 12,623 & 0.09 \\
+\bottomrule
+\end{tabular}
+\end{table*}

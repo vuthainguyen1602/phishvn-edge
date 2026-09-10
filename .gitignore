@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+.env
+.env.*
+!.env.example
+models/
+runs/
+data/
+*.aux
+*.log
+*.out
+*.spl
+*.synctex.gz

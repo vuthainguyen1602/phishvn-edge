@@ -1,0 +1,7 @@
+\subsection{Pilot measurements}
+
+The historical pilot supplies reference measurements on real hardware; it is not rerun by the public demonstration. Table~\ref{tab:pilot} reports the populated Jetson Orin Nano rows from the PhishVN Edge benchmark workflow. For model inference alone, the two URL tree-ensemble detectors reach 21,180--24,121 inferences/s with median latency below 0.05 ms. The TensorRT FP16 GPU path reaches 12,623 inferences/s with lower marginal energy per inference in this pilot, while its host latency, including transfers, is higher than the CPU rows. This comparison does not isolate the contribution of transfer overhead. The engine was benchmarked separately using TensorRT tools~\cite{nvidia_tensorrt}.
+
+
+
+These measurements are useful beyond the specific detector. They show how small URL models can be dominated by runtime overhead, host-device movement, and platform idle draw, which are often hidden in workstation-only evaluations. They also provide a baseline that future Vietnamese text models, distilled transformers, and INT8 variants must beat before they justify additional complexity on a low-power appliance.

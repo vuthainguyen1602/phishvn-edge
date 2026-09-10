@@ -1,0 +1,14 @@
+\subsection{Software description}
+The release contains three scripts. \texttt{export\_edge.py} loads a trusted scikit-learn estimator or a dictionary containing an estimator, exports it through skl2onnx, and performs a short inference timing check. Export failures return an error. The resulting tree-ensemble ONNX model targets ONNX Runtime~\cite{onnxruntime}; it is not automatically a TensorRT-compatible graph.
+
+\texttt{bench\_edge\_ort.py} warms up an ONNX Runtime CPU session, measures batch-one median, p95, and p99 latency, and runs a sustained throughput window. It reports process peak resident memory. On Jetson, an available \texttt{tegrastats} process supplies board-power and temperature samples at 500 ms intervals. Board energy per inference uses measured load power and throughput; marginal energy requires a separate idle measurement. A file-backed telemetry capture prevents pipe-buffer saturation during longer runs.
+
+\texttt{make\_edge\_assets.py} renders the article figure and table from public aggregate snapshots. It does not load private records or rerun model predictions. The repository documents the source of each snapshot and distinguishes historical measurements from newly generated local benchmark output.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.80\textwidth]{fig_confusion.pdf}
+\caption{Confusion matrices rendered from archived aggregate counts for the two FP32 URL models on the historical temporal test split ($n=8{,}941$ per model). Rendering these counts does not rerun detector evaluation.}
+\label{fig:confusion}
+\end{figure*}
+\input{sections/06_pilot_table.tex}

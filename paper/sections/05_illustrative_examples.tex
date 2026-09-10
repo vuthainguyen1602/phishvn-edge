@@ -1,0 +1,4 @@
+\subsection{Example workflow}
+After installing the Python requirements, a user runs \texttt{make demo}. This trains a deterministic synthetic classifier with nine input features, exports it to ONNX, and writes local benchmark JSON. Users can then substitute their own trusted model and its input dimension, preserving the feature order used during training.
+
+The integration check compares the exported model's labels and probabilities with the original scikit-learn model, then validates the benchmark output. The article assets can be regenerated independently with \texttt{make assets}; \texttt{make paper} builds the PDF with pdfLaTeX.

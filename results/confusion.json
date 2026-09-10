@@ -1,0 +1,36 @@
+{
+  "split": "PhishVN temporal URL test split",
+  "n_test": 8941,
+  "labels": [
+    "benign",
+    "phishing"
+  ],
+  "models": [
+    {
+      "name": "URL HistGB (9 features)",
+      "matrix": [
+        [
+          3695,
+          150
+        ],
+        [
+          1192,
+          3904
+        ]
+      ]
+    },
+    {
+      "name": "HistGB (21 features)",
+      "matrix": [
+        [
+          3592,
+          253
+        ],
+        [
+          1106,
+          3990
+        ]
+      ]
+    }
+  ]
+}
