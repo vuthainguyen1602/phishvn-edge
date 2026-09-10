@@ -1,4 +1,5 @@
 """End-to-end regression checks without private models or datasets."""
+import hashlib
 import json
 import subprocess
 import sys
@@ -12,6 +13,20 @@ import onnxruntime as ort
 ROOT = Path(__file__).resolve().parents[1]
 
 class WorkflowTest(unittest.TestCase):
+    def test_bundled_model_is_intact_and_runs(self):
+        folder = ROOT / 'examples/artifacts'
+        manifest = json.loads((folder / 'manifest.json').read_text())
+        model = folder / manifest['file']
+        self.assertEqual(hashlib.sha256(model.read_bytes()).hexdigest(), manifest['sha256'])
+        session = ort.InferenceSession(str(model), providers=['CPUExecutionProvider'])
+        X = np.random.default_rng(42).normal(size=(8, 9)).astype(np.float32)
+        labels, probabilities = session.run(None, {'input': X})
+        self.assertEqual(labels.shape, (8,))
+        for label, row in zip(labels, probabilities):
+            self.assertIn(int(label), (0, 1))
+            self.assertAlmostEqual(sum(row.values()), 1.0, places=5)
+            self.assertEqual(int(label), max(row, key=row.get))
+
     def test_export_predictions_and_benchmark(self):
         with tempfile.TemporaryDirectory() as tmp:
             def run(script, *args):

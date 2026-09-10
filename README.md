@@ -5,19 +5,32 @@ inference on Linux edge devices, and preparing the PhishVN Edge software article
 
 ## Quick start
 
-Python 3.11 or newer is recommended. From the repository root:
+On Linux or macOS with Python 3.11 or newer, clone and run the bundled synthetic
+ONNX model. No training or export dependencies are required:
 
 ```bash
+git clone https://github.com/vuthainguyen1602/phishvn-edge.git
+cd phishvn-edge
 python3 -m venv .venv
 source .venv/bin/activate
+python -m pip install -r requirements-demo.txt
+make quickstart
+```
+
+The approximately 8 KB [dummy model](examples/artifacts/dummy.onnx) ships in Git
+and release source archives. `make quickstart` writes `runs/quickstart.json` with
+latency, throughput, and memory measurements. The timed throughput window is one
+second; installation time depends on network and platform wheel availability.
+The target is a first run in under five minutes on a supported workstation.
+This synthetic classifier is **not a phishing detector** and does not reproduce
+the historical Jetson pilot. See its [model card](examples/artifacts/README.md).
+
+To exercise training and export as well, install the full dependencies:
+
+```bash
 python -m pip install -r requirements.txt
 make demo
 ```
-
-The demo trains a small model on synthetic numeric data, exports it to ONNX,
-and writes a real local benchmark to `runs/demo.json`. It exercises the workflow;
-it does not reproduce phishing accuracy or the Jetson pilot measurements.
-No credentials, private datasets, or pretrained research models are needed.
 
 For your own trusted scikit-learn model with 9 float input features:
 

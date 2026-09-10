@@ -1,0 +1,15 @@
+{
+  "file": "dummy.onnx",
+  "sha256": "d92d30ccacee7792aab378f6e9c1cb8524016f79b4533c94e462ecee06d5305a",
+  "size_bytes": 7867,
+  "synthetic": true,
+  "features": 9,
+  "classes": [
+    0,
+    1
+  ],
+  "seed": 42,
+  "generator": "examples/train_demo.py",
+  "onnx_ir_version": 10,
+  "license": "MIT"
+}
