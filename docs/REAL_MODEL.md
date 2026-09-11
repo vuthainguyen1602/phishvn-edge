@@ -48,8 +48,13 @@ https://docs.nvidia.com/deeplearning/tensorrt/10.x.x/inference-library/python-ap
 ## Validate your own model conversion
 
 `scripts/validate_real_runtime.py` accepts an NPZ containing finite float32 `X`,
-binary `y`, and `reference_scores` from sklearn for the same X. It checks all
-scores/labels, then benchmarks real feature rows. It refuses to pass conversion
+binary `y`, and `reference_scores` from sklearn for the same X. It may also carry
+a boolean `is_test` mask, and it should: parity is checked over every row in the
+file, while accuracy is read only on the masked rows. The two answer different
+questions, and held-out-ness matters to the second one only, so restricting
+parity to a test split discards evidence for nothing. Without the mask both fall
+back to the whole file. The report states `n_parity` and `n_accuracy` separately.
+It checks all scores/labels, then benchmarks real feature rows. It refuses to pass conversion
 with any changed label or a maximum score error at least 1e-5. The private study
 vectors are not included; release reports contain aggregates only.
 
