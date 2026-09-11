@@ -1,7 +1,7 @@
 # PhishVN Edge
 
-Standalone tools for exporting scikit-learn detectors to ONNX, benchmarking CPU
-inference on Linux edge devices, and preparing the PhishVN Edge software article.
+Standalone tools for exporting scikit-learn detectors to ONNX and benchmarking
+CPU and TensorRT GPU inference on Linux edge devices.
 
 ## Predict a URL with the real model
 
@@ -58,21 +58,18 @@ training feature order. The benchmark uses random numeric inputs; it measures
 model inference, excluding URL parsing, feature extraction, and service latency.
 Joblib files must come from a trusted source because loading them executes Python code.
 
-## Reproduce the article assets
+## Reproduce the reported assets
 
 ```bash
 make assets
-make paper
 ```
 
-`make assets` regenerates the confusion figure and benchmark table from the
-aggregate snapshots in `results/`. These snapshots were transcribed from the
-original study outputs; this operation does not rerun the hardware experiment
-or recompute predictions from private test records. See [provenance](docs/PROVENANCE.md).
-
-`make paper` requires pdfLaTeX and common LaTeX packages (natbib, booktabs,
-tabularx, enumitem, caption, xcolor, hyperref, xurl). The Elsevier class and
-its sources are bundled under `paper/`. Read the [compiled article](paper/main.pdf).
+This regenerates the confusion figure and the benchmark table into `results/`,
+from the aggregate snapshots already in that directory. The snapshots were
+transcribed from the original study outputs; the command does not rerun the
+hardware experiment or recompute predictions from private test records. See
+[provenance](docs/PROVENANCE.md). The manuscript that reports these numbers is
+maintained outside this repository.
 
 ## Scope and limitations
 
@@ -97,9 +94,8 @@ and ONNX predictions, and validates benchmark JSON. CI runs this on Linux.
 ## License and attribution
 
 Code retains the original project's [MIT license](LICENSE).
-Elsevier class files retain LPPL 1.3 or later; see [third-party notices](THIRD_PARTY_NOTICES.md).
-The manuscript is an unpublished author draft. Dataset and manuscript rights
-are not broadened by the code license. This repository contains no raw dataset.
+Dataset and manuscript rights are not broadened by the code license. This
+repository contains no raw dataset.
 
 Extracted from the [PhishVN project](https://github.com/vuthainguyen1602/phishvn).
 See [CITATION.cff](CITATION.cff) for software attribution.

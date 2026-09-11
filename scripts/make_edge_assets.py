@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render the article from aggregate snapshots; does not rerun experiments."""
+"""Render the reported assets from aggregate snapshots; does not rerun experiments."""
 import csv
 import json
 from pathlib import Path
@@ -29,8 +29,7 @@ def main():
         ax.set_yticks([0, 1], snapshot['labels'])
         ax.set(xlabel='predicted', ylabel='actual', title=model['name'])
     fig.tight_layout()
-    (ROOT / 'paper/figures').mkdir(exist_ok=True)
-    fig.savefig(ROOT / 'paper/figures/fig_confusion.pdf', metadata={'CreationDate': None, 'ModDate': None})
+    fig.savefig(ROOT / 'results/fig_confusion.pdf', metadata={'CreationDate': None, 'ModDate': None})
     plt.close(fig)
     with (ROOT / 'results/pilot.csv').open() as f:
         rows = list(csv.DictReader(f))
@@ -46,7 +45,7 @@ def main():
                  f"{float(row['marginal_energy_mj']):.2f}"]
         tex.append(' & '.join(cells) + r' \\')
     tex += [r'\bottomrule', r'\end{tabular}', r'\end{table*}', '']
-    (ROOT / 'paper/sections/06_pilot_table.tex').write_text('\n'.join(tex))
+    (ROOT / 'results/pilot_table.tex').write_text('\n'.join(tex))
     print('Rendered aggregate confusion figure and pilot table.')
 
 

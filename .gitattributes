@@ -1,4 +1,2 @@
 * text=auto
 *.pdf binary
-paper/elsarticle.* linguist-vendored -whitespace
-paper/ELSARTICLE-README.txt linguist-vendored -whitespace

@@ -2,7 +2,7 @@
 
 This repository is an independently versioned extraction of PhishVN Edge.
 Source workspace base commit: `fc41059` in the original PhishVN repository.
-The software article includes subsequent local manuscript edits.
+The manuscript that reports these numbers is maintained in that repository, not here.
 
 - `scripts/export_edge.py` and `scripts/bench_edge_ort.py` originate from
   `scripts/studies/future_edge/`, with standalone error-handling and portability fixes.
