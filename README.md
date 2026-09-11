@@ -1,5 +1,7 @@
 # PhishVN Edge
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22702706.svg)](https://doi.org/10.5281/zenodo.22702706)
+
 Standalone tools for exporting scikit-learn detectors to ONNX and benchmarking
 CPU and TensorRT GPU inference on Linux edge devices.
 
@@ -81,7 +83,9 @@ maintained outside this repository.
 - Historical Jetson pilot values are reference results, not performance promises.
   FP16 detection accuracy, long thermal soaks, and external power validation remain pending.
 - Releases are archived to Zenodo, which mints the software DOI; `.zenodo.json` holds the
-  record metadata. No archived release exists yet, so there is no DOI to cite.
+  record metadata. Cite the concept DOI [10.5281/zenodo.22702706](https://doi.org/10.5281/zenodo.22702706)
+  for the software, or [10.5281/zenodo.22702707](https://doi.org/10.5281/zenodo.22702707) for the
+  archived `v0.2.1` release specifically.
 
 ## Development
 
