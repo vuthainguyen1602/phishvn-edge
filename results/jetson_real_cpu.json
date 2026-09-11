@@ -1,7 +1,10 @@
 {
   "runtime": "cpu",
+  "n_parity": 53116,
+  "n_accuracy": 8941,
+  "accuracy_rows": "held-out test split",
   "n_test": 8941,
-  "max_score_error": 1.1682038258964411e-07,
+  "max_score_error": 1.5408748288425755e-07,
   "label_disagreements": 0,
   "accuracy": 0.8483391119561571,
   "f1": 0.8546935276468067,
@@ -18,10 +21,10 @@
   "validation_passed": true,
   "platform": "aarch64",
   "benchmark": {
-    "median_ms": 0.04006500239484012,
-    "p95_ms": 0.04480264960875502,
-    "throughput_inf_s": 22860.84363055692,
-    "window_seconds": 30.00003022999954,
+    "median_ms": 0.04105689004063606,
+    "p95_ms": 0.07184142014011738,
+    "throughput_inf_s": 21274.98349273267,
+    "window_seconds": 30.00002327701077,
     "timed_iterations": 1000,
     "scope": "batch-one model inference; GPU includes host/device copies and synchronization; excludes URL features",
     "precision": "FP32; GPU engine built with TF32 disabled"

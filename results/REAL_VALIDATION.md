@@ -1,25 +1,33 @@
 # Real-model validation on the second Jetson
 
-`jetson_real_cpu.json` and `jetson_real_gpu.json` were measured on the same
+`jetson_real_cpu.json` and `jetson_real_gpu.json` were re-measured on the same
 Jetson Orin Nano Super on 2026-09-11. TensorRT 10.3.0, CUDA 12.6, L4T 36.5.0;
-ONNX Runtime 1.23.2, numpy 1.26.4, scikit-learn 1.4.2, tldextract 5.3.1.
+ONNX Runtime 1.23.2, numpy 2.2.6, tldextract 5.3.1 on the device. The reference
+scores were produced off-device with scikit-learn 1.4.2 and numpy 1.26.4.
 
-Both runtimes use 8,941 real temporal-test URL feature vectors and compare against
-sklearn predictions on the same float32 vectors. GPU inference actually executes
-through TensorRT and CUDA, with no CPU fallback. All labels agree; maximum score
-errors are below 1.2e-7. The reports use newly extracted features, so their accuracy
-must be distinguished from archived preprocessing in `real_model_validation.json`.
+Parity and accuracy are read over different rows, because they are different
+questions. Parity — does this runtime reproduce the host model's scores — runs
+over all 53,116 corpus feature vectors, since held-out-ness is irrelevant to it
+and every vector is evidence. Accuracy runs over the 8,941 held-out temporal-test
+rows only. An earlier run gave both the test split; that under-powered parity by
+a factor of six and is superseded by these reports. Both runtimes agree with
+sklearn on every label across the whole corpus; maximum score errors are 1.5e-7
+(CPU) and 9.7e-8 (GPU). GPU inference actually executes through TensorRT and
+CUDA, with no CPU fallback.
 
 Latency uses 200 warm-up calls and 1,000 timed batch-one calls; throughput uses
-one 30-second window over test feature vectors. It excludes URL parsing and feature
-extraction. GPU timing includes host/device transfers and stream synchronization.
-These are single-run pilot measurements on a machine with existing background
-services; clocks/power mode were not locked and no background services were stopped.
-They do not establish a thermal steady state or deployment-wide performance.
+one 30-second window over test feature vectors. It excludes URL parsing and
+feature extraction. GPU timing includes host/device transfers and stream
+synchronization. These are single-run pilot measurements on a machine with
+existing background services; clocks/power mode were not locked and no background
+services were stopped. They do not establish a thermal steady state or
+deployment-wide performance, and they move between runs: the CPU throughput here
+is 21,275/s where an earlier run of the same command reported 22,861/s.
 
-CPU was faster for this small model: median about 0.040 ms / 22,861 inferences/s,
-versus GPU 0.164 ms / 5,998 inferences/s. GPU correctness is established, but no GPU
-speedup is claimed. The older `pilot.csv` is an independent historical experiment.
+CPU was faster for this small model: median about 0.041 ms / 21,275 inferences/s,
+versus GPU 0.163 ms / 5,971 inferences/s. GPU correctness is established, but no
+GPU speedup is claimed. The older `pilot.csv` is an independent historical
+experiment.
 
 Only aggregate reports are released. Test URLs, labels paired with individual
 records, source joblib files, and device-specific TensorRT engines are excluded.
