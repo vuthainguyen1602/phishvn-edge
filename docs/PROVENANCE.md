@@ -30,4 +30,6 @@ it does not estimate marginal energy without an independently measured idle base
 Local release validation used Python 3.14 on macOS/Apple Silicon; the exact
 installed versions are recorded in `requirements-tested-macos-py314.txt`.
 That file is an environment record, not a cross-platform lockfile. CI uses
-Python 3.11 on Linux and installs the compatible ranges in `requirements.txt`.
+Python 3.11 on Linux and installs the compatible ranges in `requirements.txt`. The
+Jetson runs on the Python that ships with its JetPack, 3.10, which is what the
+GPU reports in this directory were produced on.

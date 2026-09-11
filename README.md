@@ -21,7 +21,7 @@ Read the [model card](artifacts/url_histgb21/README.md) for validation and limit
 
 ## Quick start
 
-On Linux or macOS with Python 3.11 or newer, clone and run the bundled synthetic
+On Linux or macOS with Python 3.10 or newer, clone and run the bundled synthetic
 ONNX model. No training or export dependencies are required:
 
 ```bash

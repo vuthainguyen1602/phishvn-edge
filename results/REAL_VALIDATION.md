@@ -29,5 +29,12 @@ versus GPU 0.163 ms / 5,971 inferences/s. GPU correctness is established, but no
 GPU speedup is claimed. The older `pilot.csv` is an independent historical
 experiment.
 
+`real_model_validation.json` is an earlier aggregate from the same detector under
+the archived preprocessing rather than the extractor in `scripts/`: it records
+5 label changes from float64 to float32 and 2 from raw to archived features, on
+the same 8,941 test rows. It is kept because those counts are the evidence that
+the conversion is lossless at the label level, and it is not comparable with the
+reports above, which use newly extracted features.
+
 Only aggregate reports are released. Test URLs, labels paired with individual
 records, source joblib files, and device-specific TensorRT engines are excluded.
