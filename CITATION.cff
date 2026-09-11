@@ -13,6 +13,9 @@ identifiers:
     value: "10.5281/zenodo.22702706"
     description: "Concept DOI, always resolving to the latest archived release"
   - type: doi
+    value: "10.5281/zenodo.22707839"
+    description: "Archived release v0.2.2"
+  - type: doi
     value: "10.5281/zenodo.22702707"
     description: "Archived release v0.2.1, superseded: its validator reports one sample size and its Jetson reports predate the whole-corpus parity run"
 license: MIT

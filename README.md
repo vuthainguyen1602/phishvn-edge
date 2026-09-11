@@ -84,8 +84,8 @@ maintained outside this repository.
   FP16 detection accuracy, long thermal soaks, and external power validation remain pending.
 - Releases are archived to Zenodo, which mints the software DOI; `.zenodo.json` holds the
   record metadata. Cite the concept DOI [10.5281/zenodo.22702706](https://doi.org/10.5281/zenodo.22702706)
-  for the software, or [10.5281/zenodo.22702707](https://doi.org/10.5281/zenodo.22702707) for the
-  archived `v0.2.1` release specifically.
+  for the software, or [10.5281/zenodo.22707839](https://doi.org/10.5281/zenodo.22707839) for the
+  archived `v0.2.2` release specifically.
 
 ## Development
 
