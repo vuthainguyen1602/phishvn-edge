@@ -3,6 +3,20 @@
 Standalone tools for exporting scikit-learn detectors to ONNX, benchmarking CPU
 inference on Linux edge devices, and preparing the PhishVN Edge software article.
 
+## Predict a URL with the real model
+
+The repository now includes the trained **21-feature PhishVN HistGB detector**,
+its offline URL feature extractor, and CPU/GPU inference commands:
+
+```bash
+python -m pip install -r requirements-predict.txt
+python scripts/predict_url.py --url 'https://example.com'
+```
+
+Run these in a Python environment from the repository root. For setup and actual
+Jetson GPU execution, follow [real-model instructions](docs/REAL_MODEL.md).
+Read the [model card](artifacts/url_histgb21/README.md) for validation and limits.
+
 ## Quick start
 
 On Linux or macOS with Python 3.11 or newer, clone and run the bundled synthetic
@@ -62,11 +76,11 @@ its sources are bundled under `paper/`. Read the [compiled article](paper/main.p
 
 ## Scope and limitations
 
-- The runnable software covers scikit-learn export and ONNX Runtime CPU inference.
+- The software includes real URL inference on CPU and validated TensorRT FP32 GPU execution.
 - [Jetson instructions](docs/JETSON_DEPLOY.md) describe on-device CPU benchmarking
   and the prerequisites for using an independently prepared TensorRT engine.
-- TensorRT engine conversion, a scoring API, SMS forwarding, and gateway
-  integrations are not implemented in this repository.
+- TensorRT conversion is implemented for the bundled numeric binary HistGB model.
+  A scoring API, SMS forwarding, and gateway integrations are not implemented.
 - Historical Jetson pilot values are reference results, not performance promises.
   FP16 detection accuracy, long thermal soaks, and external power validation remain pending.
 - A public reproducible capsule and a software archive DOI have not been created.

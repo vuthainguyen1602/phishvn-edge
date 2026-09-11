@@ -1,0 +1,14 @@
+{
+  "name": "PhishVN URL HistGB (21 features)",
+  "version": "0.2.0",
+  "synthetic": false,
+  "license": "MIT",
+  "source_model": "url_hgb21.joblib",
+  "export_contract": "finite float32, features.json order; label phishing iff score > 0.5",
+  "sha256": {
+    "cpu.onnx": "5d6f2ae8917746d6fb8776b2f5274b425e327bdf3e6194152f86d584b83686d3",
+    "gpu.onnx": "bc1f5abddc87fab59dcdd68862b35eea141318672df8b4f26a511079d26ff3ca",
+    "features.json": "9a2b3b9e7bbc3fe5590c97457b33332f1ac7b4ab20a882acceddd945f45a5d7b"
+  },
+  "source_sha256": "a026cbc493f09aec49f9ae286b945fb63e3f12e63a66e0c458894d3397803bc3"
+}

@@ -1,0 +1,62 @@
+{
+  "n_test": 8941,
+  "runtimes": {
+    "cpu.onnx": {
+      "max_score_error_vs_sklearn_float32": 1.1682038258964411e-07,
+      "label_disagreements": 0,
+      "accuracy": 0.8481154233307237,
+      "f1": 0.8545103921148489,
+      "roc_auc": 0.9630794850700107,
+      "confusion_matrix": [
+        [
+          3595,
+          250
+        ],
+        [
+          1108,
+          3988
+        ]
+      ]
+    },
+    "gpu.onnx": {
+      "max_score_error_vs_sklearn_float32": 1.2532295989853282e-07,
+      "label_disagreements": 0,
+      "accuracy": 0.8481154233307237,
+      "f1": 0.8545103921148489,
+      "roc_auc": 0.9630793064449946,
+      "confusion_matrix": [
+        [
+          3595,
+          250
+        ],
+        [
+          1108,
+          3988
+        ]
+      ]
+    }
+  },
+  "float32_vs_original_float64_label_changes": 5,
+  "raw_url_evaluation": {
+    "accuracy": 0.8483391119561571,
+    "f1": 0.8546935276468067,
+    "roc_auc": 0.9632768401949157,
+    "confusion_matrix": [
+      [
+        3597,
+        248
+      ],
+      [
+        1108,
+        3988
+      ]
+    ],
+    "max_error_vs_sklearn_raw": 1.1682038258964411e-07
+  },
+  "feature_drift": {
+    "dom_len": 3,
+    "tld_len": 3,
+    "subdom_cnt": 3
+  },
+  "raw_vs_archived_label_changes": 2
+}

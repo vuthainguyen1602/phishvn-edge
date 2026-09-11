@@ -1,0 +1,2 @@
+-r requirements-demo.txt
+tldextract==5.3.1

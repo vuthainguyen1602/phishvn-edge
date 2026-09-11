@@ -5,3 +5,5 @@ onnx>=1.16,<2
 skl2onnx>=1.17,<2
 onnxruntime>=1.18,<2
 matplotlib>=3.8,<4
+
+tldextract==5.3.1
