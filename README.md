@@ -98,9 +98,8 @@ and ONNX predictions, and validates benchmark JSON. CI runs this on Linux.
 
 ## License and attribution
 
-Code retains the original project's [MIT license](LICENSE).
-Dataset and manuscript rights are not broadened by the code license. This
-repository contains no raw dataset.
-
-Extracted from the [PhishVN project](https://github.com/vuthainguyen1602/phishvn).
-See [CITATION.cff](CITATION.cff) for software attribution.
+Code is released under the [MIT license](LICENSE). Dataset and manuscript rights
+are not broadened by the code license, and this repository contains no raw
+dataset: the corpus the bundled detector was trained on is attributed in its
+[model card](artifacts/url_histgb21/README.md). See [CITATION.cff](CITATION.cff)
+for software attribution.
