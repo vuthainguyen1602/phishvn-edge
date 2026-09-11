@@ -80,7 +80,8 @@ maintained outside this repository.
   A scoring API, SMS forwarding, and gateway integrations are not implemented.
 - Historical Jetson pilot values are reference results, not performance promises.
   FP16 detection accuracy, long thermal soaks, and external power validation remain pending.
-- A public reproducible capsule and a software archive DOI have not been created.
+- Releases are archived to Zenodo, which mints the software DOI; `.zenodo.json` holds the
+  record metadata. No archived release exists yet, so there is no DOI to cite.
 
 ## Development
 

@@ -1,0 +1,38 @@
+{
+  "upload_type": "software",
+  "title": "PhishVN Edge: ONNX export, edge CPU benchmarking, and TensorRT inference for Vietnamese phishing URL detection",
+  "description": "<p>Standalone tools for exporting scikit-learn URL detectors to ONNX, benchmarking batch-one inference on Linux edge devices with ONNX Runtime, and building and validating a TensorRT FP32 engine on NVIDIA Jetson. Ships the exported 21-feature PhishVN HistGB detector with a model card and SHA-256 manifest, an offline URL feature extractor, and the aggregate snapshots behind the reported figures. Raw training and test records, fitted research models, and device-specific TensorRT engines are not included.</p>",
+  "access_right": "open",
+  "license": "mit",
+  "creators": [
+    {
+      "name": "Vu, Thai Nguyen",
+      "affiliation": "Campus in Ho Chi Minh City, University of Transport and Communications, Ho Chi Minh City, Vietnam",
+      "orcid": "0009-0001-9714-1031"
+    }
+  ],
+  "keywords": [
+    "phishing detection",
+    "edge computing",
+    "ONNX Runtime",
+    "TensorRT",
+    "NVIDIA Jetson",
+    "Vietnamese",
+    "on-device inference",
+    "benchmarking"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.17632/b97hxbxtpd.4",
+      "relation": "references",
+      "scheme": "doi",
+      "resource_type": "dataset"
+    },
+    {
+      "identifier": "10.1016/j.dib.2026.113195",
+      "relation": "references",
+      "scheme": "doi",
+      "resource_type": "publication-datapaper"
+    }
+  ]
+}
