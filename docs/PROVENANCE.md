@@ -1,8 +1,13 @@
 # Provenance
 
-This repository is an independently versioned extraction of PhishVN Edge.
-Source workspace base commit: `fc41059` in the original PhishVN repository.
-The manuscript that reports these numbers is maintained in that repository, not here.
+This repository is an independently versioned extraction of PhishVN Edge. It was
+cut from a private research workspace, so the workspace commit it came from is not
+a reference anyone outside can resolve and is not given here. What is checkable is
+the project's public code and dataset baselines at
+https://github.com/vuthainguyen1602/phishvn and the corpus at
+https://doi.org/10.17632/b97hxbxtpd.4, described in Data in Brief vol. 68,
+art. no. 113195. The manuscript that reports these numbers is maintained in the
+private workspace, not here.
 
 - `scripts/export_edge.py` and `scripts/bench_edge_ort.py` originate from
   `scripts/studies/future_edge/`, with standalone error-handling and portability fixes.
